@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import "./index.css";
 import { RootLayout } from "./layouts/RootLayout";
+import { DashboardPage } from "./pages/dashboard";
 
 const queryClient = new QueryClient();
 
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <div>test</div>,
+				element: <DashboardPage />,
 			},
 		],
 	},

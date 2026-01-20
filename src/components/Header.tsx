@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
 						<img
 							src={logoSrc}
 							alt={"Statscore"}
-							className="h-[26px] md:h-[60px] w-[82px] md:w-[200px] object-contain"
+							className="h-[26px] md:h-15 w-20 md:w-50 object-contain"
 						/>
 						<nav className="hidden lg:flex items-center space-x-6  my-auto">
 							{menus.map((menu) => {
