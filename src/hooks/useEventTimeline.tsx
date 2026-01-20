@@ -1,12 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import type { EventStatsResponse } from "../types/event";
 
+const API_URL = import.meta.env?.VITE_API_URL;
+
 export const useEventTimeline = (eventId: string) => {
 	return useQuery<EventStatsResponse>({
 		queryKey: ["eventStats", eventId],
 		queryFn: async () => {
 			const response = await fetch(
-				`https://www.thesportsdb.com/api/v1/json/123/lookuptimeline.php?id=${eventId}`,
+				`${API_URL}/lookuptimeline.php?id=${eventId}`,
 			);
 			if (!response.ok) {
 				throw new Error("Network response was not ok");
