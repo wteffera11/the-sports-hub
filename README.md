@@ -45,50 +45,31 @@ src/
 
 ## Getting Started
 
-### Prerequisites
-- Node.js 18+ 
-- pnpm (recommended) or npm/yarn
+### Quick Start
 
-### Installation
-
-1. **Clone the repository**
+1. **Clone and install**
    ```bash
    git clone https://github.com/wteffera11/the-sports-hub.git
    cd the-sports-hub
-   ```
-
-2. **Install dependencies**
-   ```bash
    pnpm install
    ```
 
-3. **Set up environment variables**
+2. **Set up environment**
    ```bash
    cp .env.example .env
-   ```
-   
-   Update `.env` with your API configuration:
-   ```env
-   VITE_API_URL=https://www.thesportsdb.com/api/v1/json/123/
+   # Edit .env with your API configuration
    ```
 
-4. **Start development server**
+3. **Run the app**
    ```bash
    pnpm dev
    ```
+   Open `http://localhost:5173` in your browser
 
-   The app will be available at `http://localhost:5173`
-
-### Build for Production
-
+### Build & Deploy
 ```bash
-pnpm build
-```
-
-### Preview Production Build
-
-```bash
-pnpm preview
+pnpm build        # Build for production
+pnpm preview      # Preview production build
 ```
 
 ## Development Workflow
