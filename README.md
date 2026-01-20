@@ -4,7 +4,7 @@ A modern sports dashboard application built with React, TypeScript, and Vite tha
 
 ## Features
 
-- 🏆 **Live Sports Dashboard** - View current and upcoming matches across different leagues
+- 🏆 **Sports Events Dashboard** - View current and upcoming matches across different leagues
 - 📅 **Date Filtering** - Browse matches by specific dates
 - ⚡ **Live Match Updates** - Real-time match status and scores with 15-second auto-refresh
 - 📊 **Match Details** - Detailed match information including events timeline
@@ -14,7 +14,7 @@ A modern sports dashboard application built with React, TypeScript, and Vite tha
 ## Tech Stack
 
 ### Frontend
-- **React 18** - UI framework with TypeScript
+- **React >19** - UI framework with TypeScript
 - **Vite** - Fast build tool and development server
 - **React Router** - Client-side routing
 - **TanStack Query** - Server state management and caching
@@ -163,11 +163,20 @@ Manages Git hooks automatically. Configured in `lefthook.yml`.
 
 ## API Integration
 
-The app uses [TheSportsDB API](https://www.thesportsdb.com/api.php) for fetching:
+The app uses [TheSportsDB API](https://www.thesportsdb.com/api.php) for fetching sports data. API endpoints are stored as constants in `src/constants/api.ts`:
 
-- **Events by date** - `/eventsday.php?d={date}&l={league}`
-- **Event details** - `/lookupevent.php?id={eventId}`
-- **Event timeline** - `/lookuptimeline.php?id={eventId}`
+```typescript
+export const API_ENDPOINTS = {
+  EVENTS_DAY: "/eventsday.php",      // Events by date
+  EVENT_LOOKUP: "/lookupevent.php",  // Event details
+  TIMELINE: "/lookuptimeline.php",   // Event timeline
+} as const;
+
+export const LEAGUES = {
+  ENGLISH_PREMIER_LEAGUE: "English Premier League",
+} as const;
+```
+
 
 ### Real-time Updates
 
@@ -224,22 +233,3 @@ pnpm format:fix   # Run Biome check and auto-fix
 # Git Hooks (runs automatically)
 # Lefthook hooks are configured to run on pre-commit, pre-push, and commit-msg
 ```
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Follow the commit message convention
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
