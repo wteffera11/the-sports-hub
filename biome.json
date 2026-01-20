@@ -11,6 +11,23 @@
 	"javascript": { "formatter": { "quoteStyle": "double" } },
 	"overrides": [
 		{
+			"includes": ["**/*.css"],
+			"css": {
+				"parser": {
+					"allowWrongLineComments": true,
+					"cssModules": false,
+					"tailwindDirectives": true
+				},
+				"formatter": {
+					"enabled": true,
+					"indentStyle": "tab"
+				},
+				"linter": {
+					"enabled": false
+				}
+			}
+		},
+		{
 			"includes": ["**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {
