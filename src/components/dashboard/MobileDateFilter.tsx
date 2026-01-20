@@ -6,12 +6,12 @@ import {
 	isToday,
 } from "../../utils/dateUtils";
 
-interface MobileDashboardHeaderProps {
+interface MobileDateFilterProps {
 	onDateChange?: (date: string) => void;
 	selectedDate?: string;
 }
 
-export const MobileDashboardHeader: React.FC<MobileDashboardHeaderProps> = ({
+export const MobileDateFilter: React.FC<MobileDateFilterProps> = ({
 	onDateChange,
 	selectedDate,
 }) => {

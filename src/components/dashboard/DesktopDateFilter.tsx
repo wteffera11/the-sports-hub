@@ -2,12 +2,12 @@ import React from "react";
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from "../../icons";
 import { formatDate, isToday } from "../../utils/dateUtils";
 
-interface DesktopDashboardHeaderProps {
+interface DesktopDateFilterProps {
 	onDateChange?: (date: string) => void;
 	selectedDate?: string;
 }
 
-export const DesktopDashboardHeader: React.FC<DesktopDashboardHeaderProps> = ({
+export const DesktopDateFilter: React.FC<DesktopDateFilterProps> = ({
 	onDateChange,
 	selectedDate,
 }) => {

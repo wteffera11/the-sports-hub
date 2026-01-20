@@ -1,6 +1,6 @@
 import type React from "react";
-import { DesktopDashboardHeader } from "./DesktopHeader";
-import { MobileDashboardHeader } from "./MobileHeader";
+import { DesktopDateFilter } from "./DesktopDateFilter";
+import { MobileDateFilter } from "./MobileDateFilter";
 
 interface DashboardHeaderProps {
 	onDateChange?: (date: string) => void;
@@ -10,8 +10,8 @@ interface DashboardHeaderProps {
 export const DashboardHeader: React.FC<DashboardHeaderProps> = (props) => {
 	return (
 		<>
-			<DesktopDashboardHeader {...props} />
-			<MobileDashboardHeader {...props} />
+			<DesktopDateFilter {...props} />
+			<MobileDateFilter {...props} />
 		</>
 	);
 };
