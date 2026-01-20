@@ -20,6 +20,10 @@ export const useDashboardData = (selectedDate?: string) => {
 			}
 			return response.json();
 		},
+		// refetch only if there is a response if there are no games on the selected day, there is no point in refetching
+		refetchInterval: (query) => {
+			return query?.state?.data?.events?.length ? false : 15_000;
+		},
 	});
 
 	const events = data?.events || [];

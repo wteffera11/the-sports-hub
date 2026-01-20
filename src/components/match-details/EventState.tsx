@@ -22,7 +22,10 @@ const TimelineRow = (event: EventStat) => {
 
 const EventStats: React.FC<EventStatsProps> = ({ event }) => {
 	const eventId = event.idEvent;
-	const { data, isLoading, error } = useEventTimeline(eventId);
+	const { data, isLoading, error } = useEventTimeline(
+		eventId,
+		event?.strStatus,
+	);
 
 	if (isLoading) {
 		return <LoadingState />;

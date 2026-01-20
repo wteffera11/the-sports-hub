@@ -3,7 +3,7 @@ import type { EventStatsResponse } from "../types/event";
 
 const API_URL = import.meta.env?.VITE_API_URL;
 
-export const useEventTimeline = (eventId: string) => {
+export const useEventTimeline = (eventId: string, matchStatus?: string) => {
 	return useQuery<EventStatsResponse>({
 		queryKey: ["eventStats", eventId],
 		queryFn: async () => {
@@ -15,6 +15,10 @@ export const useEventTimeline = (eventId: string) => {
 			}
 			return response.json();
 		},
+		refetchInterval:
+			matchStatus && (matchStatus === "FT" || matchStatus === "Match Finished")
+				? false
+				: 15 * 1000,
 		enabled: !!eventId,
 	});
 };

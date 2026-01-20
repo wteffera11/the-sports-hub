@@ -21,6 +21,14 @@ export const useMatchDetailData = (eventId: string) => {
 			return response.json();
 		},
 		enabled: !!eventId,
+
+		refetchInterval: (query) => {
+			const event = query?.state?.data?.events?.[0];
+			const isFinished =
+				event?.strStatus === "FT" || event?.strStatus === "Match Finished";
+
+			return isFinished ? false : 15_000;
+		},
 	});
 
 	const event = data?.events?.[0];

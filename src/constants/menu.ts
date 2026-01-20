@@ -3,7 +3,7 @@ import type { MenuItem } from "../types/menu";
 export const menus: MenuItem[] = [
 	{
 		name: "Live",
-		path: "/live",
+		path: "/#",
 	},
 	{
 		name: "Matches",
@@ -11,18 +11,18 @@ export const menus: MenuItem[] = [
 	},
 	{
 		name: "Standings",
-		path: "/standings",
+		path: "/#",
 	},
 	{
 		name: "Teams",
-		path: "/teams",
+		path: "/#",
 	},
 	{
 		name: "Comparisons",
-		path: "/comparisons",
+		path: "/#",
 	},
 	{
 		name: "Venues",
-		path: "/venues",
+		path: "/#",
 	},
 ];
