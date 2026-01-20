@@ -3,9 +3,14 @@ import { ChevronRightIcon } from "../../icons";
 import type { LeagueSectionProps } from "../../types/event";
 import { MatchCard } from "./MatchCard";
 
-export const LeagueSection: React.FC<LeagueSectionProps> = ({
+interface LeagueSectionPropsExtended extends LeagueSectionProps {
+	selectedDate?: string;
+}
+
+export const LeagueSection: React.FC<LeagueSectionPropsExtended> = ({
 	leagueName,
 	events,
+	selectedDate,
 }) => {
 	return (
 		<div className="rounded-lg overflow-hidden bg-background-surface p-4 gap-2">
@@ -18,7 +23,11 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
 
 			<div className="flex flex-col items-center">
 				{events.map((event) => (
-					<MatchCard key={event.idEvent} event={event} />
+					<MatchCard
+						key={event.idEvent}
+						event={event}
+						selectedDate={selectedDate}
+					/>
 				))}
 			</div>
 		</div>

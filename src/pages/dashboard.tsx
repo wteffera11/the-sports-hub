@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router";
 import { DashboardHeader } from "../components/dashboard/DashboardHeader";
 import { LeagueSection } from "../components/dashboard/LeagueSection";
 import { ErrorState } from "../components/ErrorState";
@@ -12,7 +13,13 @@ interface DashboardPageProps {
 }
 
 export const DashboardPage: React.FC<DashboardPageProps> = () => {
-	const [selectedDate, setSelectedDate] = React.useState<string | undefined>();
+	const location = useLocation();
+	const routerState = location.state as { selectedDate?: string } | null;
+
+	// Use the selected date from router state if available, otherwise initialize as undefined
+	const [selectedDate, setSelectedDate] = React.useState<string | undefined>(
+		routerState?.selectedDate,
+	);
 
 	const {
 		events,
@@ -56,6 +63,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = () => {
 										key={leagueName}
 										leagueName={leagueName}
 										events={leagueEvents}
+										selectedDate={selectedDate}
 									/>
 								),
 							)}

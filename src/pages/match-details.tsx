@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useSearchParams } from "react-router";
+import { useLocation, useParams, useSearchParams } from "react-router";
 import { ErrorState } from "../components/ErrorState";
 import { LoadingState } from "../components/LoadingState";
 import EventStats from "../components/match-details/EventState";
@@ -10,6 +10,8 @@ import { useMatchDetailData } from "../hooks/useMatchDetailsData";
 const MatchDetailPage: React.FC = () => {
 	const { eventId } = useParams<{ eventId: string }>();
 	const [searchParams] = useSearchParams();
+	const location = useLocation();
+	const routerState = location.state as { selectedDate?: string } | null;
 	const currentTab = searchParams.get("tab") || "Events";
 
 	const { event, isLoading, error } = useMatchDetailData(eventId!);
@@ -42,7 +44,7 @@ const MatchDetailPage: React.FC = () => {
 	return (
 		<div className="min-h-[calc(100vh-60px)] text-foreground-base p-0 md:p-4">
 			<div className="w-full md:max-w-[707px] mx-auto flex flex-col gap-y-4">
-				<HeadToHead event={event} />
+				<HeadToHead event={event} selectedDate={routerState?.selectedDate} />
 				<div className="px-4 md:p-0">{renderTabContent()}</div>
 			</div>
 		</div>
