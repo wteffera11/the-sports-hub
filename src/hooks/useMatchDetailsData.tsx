@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { API_BASE_URL, API_ENDPOINTS } from "../constants/api";
+import { eventsApi } from "../api/events.api";
 import type { EventDetail } from "../types/event";
 
 interface EventResponse {
@@ -9,18 +9,7 @@ interface EventResponse {
 export const useMatchDetailData = (eventId: string) => {
 	const { data, isLoading, error } = useQuery<EventResponse>({
 		queryKey: ["event", eventId],
-		queryFn: async () => {
-			if (!eventId) {
-				throw new Error("Event ID is required");
-			}
-			const response = await fetch(
-				`${API_BASE_URL}${API_ENDPOINTS.EVENT_LOOKUP}?id=${eventId}`,
-			);
-			if (!response.ok) {
-				throw new Error("Network response was not ok");
-			}
-			return response.json();
-		},
+		queryFn: () => eventsApi.fetchEventById(eventId),
 		enabled: !!eventId,
 
 		refetchInterval: (query) => {

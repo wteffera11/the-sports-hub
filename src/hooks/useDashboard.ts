@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { API_BASE_URL, API_ENDPOINTS, LEAGUES } from "../constants/api";
+import { eventsApi } from "../api/events.api";
 import type { Event } from "../types/event";
 
 interface EventsResponse {
@@ -9,16 +9,7 @@ interface EventsResponse {
 export const useDashboardData = (selectedDate?: string) => {
 	const { data, isLoading, error } = useQuery<EventsResponse>({
 		queryKey: ["events", selectedDate],
-		queryFn: async () => {
-			const dateToUse = selectedDate || new Date().toISOString().split("T")[0];
-			const response = await fetch(
-				`${API_BASE_URL}${API_ENDPOINTS.EVENTS_DAY}?d=${dateToUse}&l=${LEAGUES.ENGLISH_PREMIER_LEAGUE}`,
-			);
-			if (!response.ok) {
-				throw new Error("Network response was not ok");
-			}
-			return response.json();
-		},
+		queryFn: () => eventsApi.fetchEventsByDay(selectedDate),
 		refetchInterval: (query) => {
 			return query?.state?.data?.events?.length ? false : 15_000;
 		},
