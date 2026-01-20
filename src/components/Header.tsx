@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
 
 	return (
 		<header className={`bg-primary h-[56px] md:h-[60px] px-4`}>
-			<div className="max-w-360 mx-auto">
+			<div className="max-w-8xl mx-auto">
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center space-x-8">
 						<img

@@ -48,6 +48,9 @@
 	/* Border and surface colors */
 	--color-border-base: #292b41;
 	--color-surface: #e6e0e9;
+
+	--spacing-8xl: 1440px;
+	--spacing-2xl: 707px;
 }
 
 .no-scrollbar::-webkit-scrollbar {

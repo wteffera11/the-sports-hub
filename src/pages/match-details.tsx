@@ -43,7 +43,7 @@ const MatchDetailPage: React.FC = () => {
 
 	return (
 		<div className="min-h-[calc(100vh-60px)] text-foreground-base p-0 md:p-4">
-			<div className="w-full md:max-w-[707px] mx-auto flex flex-col gap-y-4">
+			<div className="w-full md:max-w-2xl mx-auto flex flex-col gap-y-4">
 				<HeadToHead event={event} selectedDate={routerState?.selectedDate} />
 				<div className="px-4 md:p-0">{renderTabContent()}</div>
 			</div>
