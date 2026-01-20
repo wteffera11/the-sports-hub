@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import "./index.css";
 import { RootLayout } from "./layouts/RootLayout";
 import { DashboardPage } from "./pages/dashboard";
+import MatchDetailPage from "./pages/match-details";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
 			{
 				index: true,
 				element: <DashboardPage />,
+			},
+			{
+				path: "matches",
+				element: <DashboardPage />,
+			},
+			{
+				path: "matches/:eventId",
+				element: <MatchDetailPage />,
 			},
 		],
 	},

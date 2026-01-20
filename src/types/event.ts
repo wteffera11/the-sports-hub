@@ -72,4 +72,35 @@ interface LeagueSectionProps {
 	events: Event[];
 }
 
-export type { Event, EventDetail, LeagueSectionProps };
+interface EventStat {
+	idTimeline: string;
+	idEvent: string;
+	strTimeline: string;
+	strTimelineDetail: string;
+	strHome: string;
+	strEvent: string;
+	idAPIfootball: string;
+	idPlayer: string;
+	strPlayer: string;
+	idAssist: string;
+	strAssist: string;
+	intTime: string;
+	strPeriod: string | null;
+	idTeam: string;
+	strTeam: string;
+	strComment: string;
+	dateEvent: string;
+	strSeason: string;
+}
+
+interface EventStatsResponse {
+	timeline: EventStat[];
+}
+
+export type {
+	Event,
+	EventDetail,
+	LeagueSectionProps,
+	EventStat,
+	EventStatsResponse,
+};
