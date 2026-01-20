@@ -116,7 +116,6 @@ type(scope): description
 
 **Examples:**
 ```bash
-git commit -m "feat(dashboard): add live match filtering"
 git commit -m "fix(api): resolve environment variable loading"
 git commit -m "docs: update README with setup instructions"
 ```
