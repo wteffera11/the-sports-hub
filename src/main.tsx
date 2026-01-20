@@ -17,6 +17,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
+
 				element: <DashboardPage />,
 			},
 			{
@@ -30,6 +31,19 @@ const router = createBrowserRouter([
 		],
 	},
 ]);
+
+document.title = "The Sports Hub - Live Sports Events & Match Details";
+
+let metaDescription = document.querySelector('meta[name="description"]');
+if (!metaDescription) {
+	metaDescription = document.createElement("meta");
+	metaDescription.setAttribute("name", "description");
+	document.head.appendChild(metaDescription);
+}
+metaDescription.setAttribute(
+	"content",
+	"Your destination for live sports events, match details, and real-time updates",
+);
 
 const root = document.getElementById("root")!;
 
