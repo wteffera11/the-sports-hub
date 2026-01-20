@@ -70,7 +70,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = () => {
 						aria-label="Close menu"
 					/>
 
-					<div className="fixed top-0 right-0 h-full w-80 bg-primary shadow-xl z-[9999] transform transition-transform duration-300 ease-in-out">
+					<div className="fixed top-0 right-0 h-full w-80 bg-primary shadow-xl z-9999 transform transition-transform duration-300 ease-in-out">
 						<div className="flex items-center justify-between p-4 border-b border-white/10">
 							<h2 className="text-white font-semibold text-lg">Menu</h2>
 							<button
