@@ -6,7 +6,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "./components/ErrorFallback";
 import { RootLayout } from "./layouts/RootLayout";
 import { DashboardPage } from "./pages/dashboard";
-import MatchDetailPage from "./pages/match-details";
+import MatchDetailPage from "./pages/match-view";
 
 const queryClient = new QueryClient();
 
