@@ -52,7 +52,7 @@ const EventStats: React.FC<EventStatsProps> = ({ event }) => {
 
 	return (
 		<div className="p-4 bg-background-surface gap-4 text-white rounded-lg">
-			<h2 className="text-sm font-semibold leading-5 mb-4">Events</h2>
+			<h2 className="text-sm font-semibold leading-5">Events</h2>
 			{event?.strStatus === "FT" ||
 				(event?.strStatus === "Match Finished" && (
 					<div className="flex items-center justify-center py-4">
