@@ -29,8 +29,10 @@ export const useDashboardData = (selectedDate?: string) => {
 	);
 
 	const allCount = events.length;
-	const liveCount = events.filter((e) => e.strStatus === "Match Live").length;
-	const favoriteCount = 2;
+	const liveCount = events.filter(
+		(e) => e.strStatus === "1H" || e.strStatus === "2H",
+	).length;
+	const favoriteCount = 0;
 
 	return {
 		events,
