@@ -6,7 +6,7 @@ export const RootLayout: React.FC = () => {
 	return (
 		<div className="min-h-screen">
 			<Header />
-			<main className="bg-background">
+			<main className="bg-background h-full">
 				<Outlet />
 			</main>
 		</div>

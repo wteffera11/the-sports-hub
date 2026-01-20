@@ -16,20 +16,6 @@ const MatchDetailPage: React.FC = () => {
 
 	const { event, isLoading, error } = useMatchDetailData(eventId!);
 
-	if (isLoading) {
-		return <LoadingState />;
-	}
-
-	if (error) {
-		return (
-			<ErrorState message={`Error loading match details: ${error.message}`} />
-		);
-	}
-
-	if (!event) {
-		return <NoDataState />;
-	}
-
 	const renderTabContent = () => {
 		switch (currentTab) {
 			case "Events":
@@ -41,14 +27,38 @@ const MatchDetailPage: React.FC = () => {
 		}
 	};
 
-	return (
-		<div className="min-h-[calc(100vh-60px)] text-foreground-base p-0 md:p-4">
-			<div className="w-full md:max-w-2xl mx-auto flex flex-col gap-y-4">
+	const renderContent = () => {
+		if (isLoading) {
+			return <LoadingState />;
+		}
+
+		if (error) {
+			return (
+				<ErrorState message={`Error loading match details: ${error.message}`} />
+			);
+		}
+
+		if (!event) {
+			return <NoDataState />;
+		}
+
+		return (
+			<>
 				<HeadToHead event={event} selectedDate={routerState?.selectedDate} />
 				<div className="px-4 md:p-0">{renderTabContent()}</div>
+			</>
+		);
+	};
+
+	const contentWrapper = (
+		<div className="min-h-[calc(100vh-60px)] text-foreground-base p-0 md:p-4">
+			<div className="w-full md:max-w-3xl mx-auto flex flex-col gap-y-4">
+				{renderContent()}
 			</div>
 		</div>
 	);
+
+	return contentWrapper;
 };
 
 export default MatchDetailPage;
