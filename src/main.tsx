@@ -18,11 +18,11 @@ const router = createBrowserRouter([
 				element: <DashboardPage />,
 			},
 			{
-				path: "matches",
+				path: "match",
 				element: <DashboardPage />,
 			},
 			{
-				path: "matches/:eventId",
+				path: "match/:eventId",
 				element: <MatchDetailPage />,
 			},
 		],

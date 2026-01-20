@@ -26,9 +26,9 @@ export const MobileDashboardHeader: React.FC<MobileDashboardHeaderProps> = ({
 	return (
 		<div className="md:hidden relative py-4">
 			<div className="flex items-center justify-between mb-4">
-				<div className="relative flex  overflow-x-auto scrollbar-hide">
+				<div className="relative flex  overflow-x-auto no-scrollbar">
 					<div className="absolute inset-0 bg-linear-to-r from-background via-transparent to-background pointer-events-none z-10"></div>
-					<div className="flex space-x-2 overflow-x-auto scrollbar-hide">
+					<div className="flex space-x-2 overflow-x-auto no-scrollbar">
 						{mobileDates.map((date) => {
 							const active = date.toDateString() === currentDate.toDateString();
 							const isTodayDate = isToday(date);
@@ -61,7 +61,7 @@ export const MobileDashboardHeader: React.FC<MobileDashboardHeaderProps> = ({
 			<div className="flex justify-center">
 				<button
 					type="button"
-					className="w-10 h-10 rounded-full bg-background-muted flex items-center justify-center transition-colors absolute top-0 right-1.5 z-50"
+					className="w-10 h-10 rounded-full bg-background-muted flex items-center justify-center transition-colors absolute top-3.5 right-1.5 z-50"
 					aria-label="Open calendar"
 				>
 					<CalendarGreenIcon />

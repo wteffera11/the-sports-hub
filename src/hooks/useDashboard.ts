@@ -1,11 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
+import { API_BASE_URL, API_ENDPOINTS, LEAGUES } from "../constants/api";
 import type { Event } from "../types/event";
 
 interface EventsResponse {
 	events: Event[];
 }
-
-const API_URL = import.meta.env?.VITE_API_URL;
 
 export const useDashboardData = (selectedDate?: string) => {
 	const { data, isLoading, error } = useQuery<EventsResponse>({
@@ -13,14 +12,13 @@ export const useDashboardData = (selectedDate?: string) => {
 		queryFn: async () => {
 			const dateToUse = selectedDate || new Date().toISOString().split("T")[0];
 			const response = await fetch(
-				`${API_URL}/eventsday.php?d=${dateToUse}&l=English Premier League`,
+				`${API_BASE_URL}${API_ENDPOINTS.EVENTS_DAY}?d=${dateToUse}&l=${LEAGUES.ENGLISH_PREMIER_LEAGUE}`,
 			);
 			if (!response.ok) {
 				throw new Error("Network response was not ok");
 			}
 			return response.json();
 		},
-		// refetch only if there is a response if there are no games on the selected day, there is no point in refetching
 		refetchInterval: (query) => {
 			return query?.state?.data?.events?.length ? false : 15_000;
 		},

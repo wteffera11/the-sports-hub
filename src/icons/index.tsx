@@ -744,43 +744,15 @@ export const OffsideIcon: React.FC<{ className?: string }> = ({
 export const VARIcon: React.FC<{ className?: string }> = ({ className }) => {
 	return (
 		<svg
-			width="20"
-			height="20"
-			viewBox="0 0 20 20"
-			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="currentColor"
 			className={className}
 		>
-			<rect
-				x="2"
-				y="4"
-				width="12"
-				height="8"
-				rx="1"
-				stroke="#374151"
-				strokeWidth="1.5"
-				fill="none"
-			/>
-			<path
-				d="M14 8L16 6V10L14 8Z"
-				stroke="#374151"
-				strokeWidth="1.5"
-				fill="none"
-			/>
-			<path d="M4 6H8" stroke="#374151" strokeWidth="1" strokeLinecap="round" />
-			<path
-				d="M4 8H10"
-				stroke="#374151"
-				strokeWidth="1"
-				strokeLinecap="round"
-			/>
-			<path
-				d="M4 10H6"
-				stroke="#374151"
-				strokeWidth="1"
-				strokeLinecap="round"
-			/>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M8.707 2.293l3.293 3.292l3.293 -3.292a1 1 0 0 1 1.32 -.083l.094 .083a1 1 0 0 1 0 1.414l-2.293 2.293h4.586a3 3 0 0 1 3 3v9a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-9a3 3 0 0 1 3 -3h4.585l-2.292 -2.293a1 1 0 0 1 1.414 -1.414" />
 		</svg>
 	);
 };

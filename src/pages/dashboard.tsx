@@ -35,10 +35,6 @@ export const DashboardPage: React.FC<DashboardPageProps> = () => {
 		setSelectedDate(date);
 	};
 
-	if (isLoading) return <LoadingState />;
-	if (error)
-		return <ErrorState message={`Error loading events: ${error.message}`} />;
-
 	return (
 		<>
 			<DashboardHeader
@@ -54,8 +50,13 @@ export const DashboardPage: React.FC<DashboardPageProps> = () => {
 					/>
 
 					<div className="space-y-4 bg-inherit">
-						{!isLoading && events.length === 0 && <NoDataState />}
+						{isLoading && <LoadingState />}
+						{error && (
+							<ErrorState message={`Error loading events: ${error.message}`} />
+						)}
+						{!isLoading && !error && events.length === 0 && <NoDataState />}
 						{!isLoading &&
+							!error &&
 							events.length > 0 &&
 							Object.entries(groupedEvents).map(
 								([leagueName, leagueEvents]) => (

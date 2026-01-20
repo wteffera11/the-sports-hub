@@ -24,7 +24,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({
 		: {};
 
 	const handleMatchClick = () => {
-		navigate(`/matches/${event.idEvent}`, { state: { selectedDate } });
+		navigate(`/match/${event.idEvent}`, { state: { selectedDate } });
 	};
 
 	return (

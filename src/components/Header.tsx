@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
 						<LeagueSelector />
 
 						<div className="flex items-center space-x-2 px-3 py-2 h-8 md:h-10 text-sm text-white bg-black/15 hover:bg-white/10 transition-colors cursor-pointer rounded-full">
-							<span>2024/25</span>
+							<span className="text-[13px] leading-4 font-light">2024/25</span>
 							<TrailingIcon />
 						</div>
 

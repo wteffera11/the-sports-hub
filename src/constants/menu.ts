@@ -7,7 +7,7 @@ export const menus: MenuItem[] = [
 	},
 	{
 		name: "Matches",
-		path: "/matches",
+		path: "/match",
 	},
 	{
 		name: "Standings",

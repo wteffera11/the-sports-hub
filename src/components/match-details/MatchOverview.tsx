@@ -20,7 +20,7 @@ export const HeadToHead: React.FC<HeadToHeadProps> = ({
 	const currentTab = searchParams.get("tab") || "Events";
 
 	const handleTabClick = (selectedTab: string) => {
-		navigate(`/matches/${event.idEvent}?tab=${selectedTab}`);
+		navigate(`/match/${event.idEvent}?tab=${selectedTab}`);
 	};
 
 	const handleBack = () => {
