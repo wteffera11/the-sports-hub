@@ -73,7 +73,7 @@ export const MatchCenterScore: React.FC<MatchCenterScoreProps> = ({
 				)}
 			</div>
 			<div
-				className={`font-semibold text-[10px] leading-4 px-1 rounded-sm  ${getStatusBgColor()} rounded px-2 py-1 inline-block`}
+				className={`font-semibold text-xxs leading-4 px-1 rounded-sm  ${getStatusBgColor()} rounded px-2 py-1 inline-block`}
 			>
 				{getStatusText()}
 			</div>

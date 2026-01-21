@@ -28,9 +28,9 @@ export const MatchCard: React.FC<MatchCardProps> = ({
 	};
 
 	return (
-		<div className="w-full p-2 px-0 h-[76px] hover:bg-gray-750 transition-colors text-left rounded-none! border-b! border-border-base">
+		<div className="w-full p-2 px-0 h-19 hover:bg-gray-750 transition-colors text-left rounded-none! border-b! border-border-base">
 			<div
-				className="flex items-center justify-between h-[60px]! cursor-pointer"
+				className="flex items-center justify-between h-15! cursor-pointer"
 				style={liveStyle}
 				onClick={handleMatchClick}
 			>

@@ -20,7 +20,7 @@ export const HeadToHeadTeam: React.FC<HeadToHeadTeamProps> = ({
 					<img
 						src={teamBadge}
 						alt={teamName}
-						className="w-[42px] h-[42px] object-contain"
+						className="w-42px h-42px object-contain"
 						onError={(e) => {
 							e.currentTarget.style.display = "none";
 						}}

@@ -10,9 +10,9 @@ export const MatchTimeDisplay: React.FC<MatchTimeDisplayProps> = ({
 	event,
 }) => {
 	return (
-		<div className="text-center min-w-[60px]">
+		<div className="text-center min-w-15">
 			<div
-				className={`text-xs py-[22px]! border-l-3! w-14! px-4 -pl-4 ${getBorderColor(event.strStatus)} text-gray-400`}
+				className={`text-xs py-22px! border-l-3! w-14! px-4 -pl-4 ${getBorderColor(event.strStatus)} text-gray-400`}
 			>
 				{getTimeDisplay(event)}
 			</div>

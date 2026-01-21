@@ -12,14 +12,14 @@ export const Header: React.FC = () => {
 	const isActive = (path: string) => location.pathname === path;
 
 	return (
-		<header className={`bg-primary h-[56px] md:h-[60px] px-4`}>
+		<header className={`bg-primary h-14 md:h-15 px-4`}>
 			<div className="max-w-8xl mx-auto">
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center space-x-8">
 						<img
 							src={logoSrc}
 							alt={"Statscore"}
-							className="h-[26px] md:h-15 w-20 md:w-50 object-contain"
+							className="h-26px md:h-15 w-20 md:w-50 object-contain"
 						/>
 						<nav className="hidden lg:flex items-center space-x-6  my-auto">
 							{menus.map((menu) => {
@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
 						<LeagueSelector />
 
 						<div className="flex items-center space-x-2 px-3 py-2 h-8 md:h-10 text-sm text-white bg-black/15 hover:bg-white/10 transition-colors cursor-pointer rounded-full">
-							<span className="text-[13px] leading-4 font-light">2024/25</span>
+							<span className="text-13px leading-4 font-light">2024/25</span>
 							<TrailingIcon />
 						</div>
 
